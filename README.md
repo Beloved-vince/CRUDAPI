@@ -25,3 +25,17 @@ Before you begin, ensure you have met the following requirements:
 
    ```bash
    git clone https://github.com/your-username/your-project.git
+
+     Navigate to the project directory:
+
+        ```cd Crud-API/```
+
+    Create a virtual environment (recommended) to isolate project dependencies:
+        ```python -m venv venv```
+
+    Activate the virtual environment:
+    ```On Windows:
+
+            bash
+            Copy code
+            venv\Scripts\activate```
