@@ -88,6 +88,8 @@ Push your changes to your fork on GitHub.
 Submit a pull request to the main repository.
 
 
+## Using the Endpoint
+
 ## Creating and Reading a Person
 * Create a New Person
         To create a new Person object in your Django project, you can use the CreatePersonView endpoint by sending an HTTP POST request with the required data for the new person.
@@ -108,33 +110,33 @@ Submit a pull request to the main repository.
 
         {
         "name": "Alice",
-        "name": "Johnson",
-        "email": "alice@example.com"
         }
 * Response:
 
-If the creation is successful, you will receive a JSON response with a status code of 201 (Created) and the newly created Person object, including its ID.
-json
-Copy code
-{
-  "id": 2,
-  "name": "Alice",
-}
+        ```If the creation is successful, you will receive a JSON response with a status code of 201 (Created) and the newly created Person object, including its ID.``
+        json
+        Copy code
+        {
+        "id": 2,
+        "name": "Alice",
+        }
 
 ## Read a Person
-T```o retrieve information about a specific Person object, you can use the RetrievePersonView endpoint by sending an HTTP GET request with the `person's ID.
+T```o retrieve information about a specific Person object, you can use the RetrievePersonView endpoint by sending an HTTP GET request with the `
 
-Endpoint: /api/<int:pk>
+        *person's ID.
 
-Method: GET
+        Endpoint: /api/<int:pk>
 
-Description: Retrieve details of a Person object by specifying its ID.
+        Method: GET
 
-Example Request:
+        Description: Retrieve details of a Person object by specifying its ID.
 
-http
-GET /api/2
-Response:
+        Example Request:
+
+        http
+        GET /api/2
+        Response:
 
 ```If the requested person exists, you will receive a JSON response with a status code of 200 (OK) and the details of the Person object.``
 json
@@ -150,7 +152,6 @@ json
 }
 
 
-## Using the Endpoint
 
 ### Update and Delete a Person by ID
 
@@ -178,27 +179,27 @@ json
   "detail": "Not found."
 }
 ## Delete a Person
-# Endpoint: /api/<int:pk>
+* Endpoint: /api/<int:pk>
 
-Method: DELETE
+        Method: DELETE
 
-Description: Delete a Person object by specifying its ID.
+        Description: Delete a Person object by specifying its ID.
 
-Example Request:
+        Example Request:
 
-http
-DELETE /api/1
-Response:
+        http
+        DELETE /api/1
+        Response:
 
-```If the deletion is successful, you will receive a JSON response with a status code of 204 (No Content) and a success message.``
-json
-{
-  "message": "Deleted successfully"
-}
-If the provided ID does not exist, you will receive a JSON response with a status code of 404 (Not Found) and an error message.
-json
+        ```If the deletion is successful, you will receive a JSON response with a status code of 204 (No Content) and a success message.``
+        json
+        {
+        "message": "Deleted successfully"
+        }
+        If the provided ID does not exist, you will receive a JSON response with a status code of 404 (Not Found) and an error message.
+        json
 
-{
-  "detail": "Not found."
-}
-Make sure to replace /api with the actual URL path you've defined in your Django project's urls.py for the UpdatePersonView.
+        {
+        "detail": "Not found."
+        }
+        Make sure to replace /api with the actual URL path you've defined in your Django project's urls.py for the UpdatePersonView.
