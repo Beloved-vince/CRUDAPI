@@ -86,3 +86,58 @@ Make your changes and commit them with clear, concise commit messages.
 Push your changes to your fork on GitHub.
 
 Submit a pull request to the main repository.
+
+
+## Using the Endpoint
+
+### Update and Delete a Person by ID
+
+To update and delete a `Person` object in your Django project, you can use the `UpdatePersonView` endpoint by sending HTTP requests with the person's ID. This view supports both updating and deleting operations.
+
+#### Update a Person
+
+- **Endpoint**: `/api/person/<int:pk>/`
+- **Method**: PUT
+- **Description**: Update the details of a `Person` object by specifying its ID.
+- **Request Payload**: Provide the updated data for the `Person` object in the request body in JSON format.
+- **Example Request**:
+
+ Response:
+
+If the update is successful, you will receive a JSON response with a status code of 200 (OK) and the updated Person object.
+json
+{
+  "id": 1,
+  "name": "John","
+}
+If the provided ID does not exist, you will receive a JSON response with a status code of 404 (Not Found) and an error message.
+json
+{
+  "detail": "Not found."
+}
+Delete a Person
+Endpoint: /api/<int:pk>
+
+Method: DELETE
+
+Description: Delete a Person object by specifying its ID.
+
+Example Request:
+
+http
+DELETE /api/1
+Response:
+
+If the deletion is successful, you will receive a JSON response with a status code of 204 (No Content) and a success message.
+json
+Copy code
+{
+  "message": "Deleted successfully"
+}
+If the provided ID does not exist, you will receive a JSON response with a status code of 404 (Not Found) and an error message.
+json
+Copy code
+{
+  "detail": "Not found."
+}
+Make sure to replace /api with the actual URL path you've defined in your Django project's urls.py for the UpdatePersonView.
